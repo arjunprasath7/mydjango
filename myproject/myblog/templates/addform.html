@@ -1,0 +1,13 @@
+<html>
+<head>
+<title>New Post</title>
+</head>
+<body>
+<form name="newPost" id="newPost" method="post" action="http://127.0.0.1:8000/myblog/createPost/">
+{% csrf_token %}
+<p>Title : </p><input type="text" name="title" id="title" required >
+<p>Post : </p><textarea name="postData" id="postData" required ></textarea>
+<input type="submit" name="submit" value="submit">
+</form>
+</body>
+</html>

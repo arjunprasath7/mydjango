@@ -1,0 +1,13 @@
+<h1>{{ postDetails.postTitle }}</h1>
+<p>{{ postDetails.postData }}</p>
+<p>Posted On : {{ postDetails.pub_date }}</p>
+<p>Comments : </p>
+{% for x in commentsData %}
+        <div style="color:green;">{{ x.comments}}</div>commented on: {{x.commentDate}}  <br> <br>
+{% endfor %}
+<form name="newComment" id="newComment" method="post" action="http://127.0.0.1:8000/myblog/createComment/">
+{% csrf_token %}
+<input type="hidden" name="postId" value="{{ postDetails.id }}">
+<textarea name="commentData" id="commentData" required ></textarea>
+<input type="submit" name="submit" value="submit">
+</form>

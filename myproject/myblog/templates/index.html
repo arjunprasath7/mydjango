@@ -1,0 +1,11 @@
+<p style="font-weight: bold; font-size: 14px">Welcome To My Blog</p>
+<p style="font-size: 12px">Post Lists Are Bellow: </p>
+{% if postsList %}
+    {% for posts in postsList %}
+        <div style="font-size: 12px; color:green;"><a href="/myblog/{{ posts.id }}/">{{ posts.postTitle}}</a></div>
+    {% endfor %}
+{% else %}
+    <p style="font-size: 12px">No Posts Available</p>
+{% endif %}
+<br>
+<a href="/myblog/addpost/">Create New Post </a>
